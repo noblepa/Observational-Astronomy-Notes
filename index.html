@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Astronomy — MCQ Study Guide</title>
+<style>
+  :root{
+    --bg:#ffffff; --bg2:#f5f5f3; --bg3:#eeece6;
+    --text:#1a1a1a; --text2:#555; --text3:#888;
+    --border:rgba(0,0,0,0.12); --border2:rgba(0,0,0,0.22);
+    --radius:12px; --radius-sm:8px;
+  }
+  @media(prefers-color-scheme:dark){
+    :root{
+      --bg:#1e1e1e; --bg2:#272727; --bg3:#303030;
+      --text:#f0f0f0; --text2:#aaa; --text3:#777;
+      --border:rgba(255,255,255,0.12); --border2:rgba(255,255,255,0.22);
+    }
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg3);color:var(--text);min-height:100vh;padding:20px 12px 40px;}
+  .wrap{max-width:820px;margin:0 auto;}
+  .banner{background:var(--bg2);border:0.5px solid var(--border);border-radius:var(--radius);padding:18px 20px;margin-bottom:18px;}
+  .banner h1{font-size:20px;font-weight:600;margin-bottom:4px;}
+  .banner p{font-size:13px;color:var(--text2);margin-bottom:10px;}
+  .pills{display:flex;flex-wrap:wrap;gap:6px;}
+  .pill{display:inline-block;font-size:11px;font-weight:500;padding:3px 9px;border-radius:20px;}
+  .mcq{display:inline-block;font-size:9px;font-weight:600;padding:1px 6px;border-radius:4px;background:#FAC775;color:#633806;margin-left:5px;vertical-align:middle;}
+  .sec{margin-bottom:10px;}
+  .sec-hdr{display:flex;align-items:center;gap:10px;padding:13px 16px;border-radius:var(--radius);cursor:pointer;border:0.5px solid var(--border);background:var(--bg);transition:background .15s;}
+  .sec-hdr:hover{background:var(--bg2);}
+  .ico{width:34px;height:34px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0;}
+  .stitle{font-size:15px;font-weight:600;flex:1;}
+  .ssub{font-size:11px;color:var(--text3);margin-top:1px;}
+  .arr{font-size:15px;color:var(--text3);transition:transform .2s;font-weight:300;}
+  .arr.op{transform:rotate(90deg);}
+  .sbody{display:none;margin-top:4px;padding:0 2px;}
+  .sbody.op{display:block;}
+  .sub-hdr{display:flex;align-items:center;gap:8px;padding:9px 13px;border-radius:var(--radius-sm);margin:8px 0 5px;cursor:pointer;border:0.5px solid var(--border);background:var(--bg);transition:background .15s;}
+  .sub-hdr:hover{background:var(--bg2);}
+  .sub-stitle{font-size:13px;font-weight:500;flex:1;}
+  .sub-arr{font-size:12px;color:var(--text3);transition:transform .2s;}
+  .sub-arr.op{transform:rotate(90deg);}
+  .sub-body{display:none;margin-bottom:8px;}
+  .sub-body.op{display:block;}
+  .cg2{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:9px;margin-bottom:10px;}
+  .cg3{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:9px;margin-bottom:10px;}
+  .cg4{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px;margin-bottom:10px;}
+  .card{background:var(--bg);border:0.5px solid var(--border);border-radius:var(--radius);padding:11px 13px;}
+  .clbl{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;margin-bottom:5px;}
+  .cval{font-size:13px;line-height:1.65;color:var(--text);}
+  .hl{display:flex;align-items:flex-start;gap:9px;padding:8px 11px;border-radius:7px;margin-bottom:6px;}
+  .dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;margin-top:5px;}
+  .ht{font-size:13px;line-height:1.6;color:var(--text);}
+  .ht b{font-weight:600;}
+  .tr{display:flex;gap:8px;margin-bottom:5px;padding:8px 10px;border-radius:7px;font-size:13px;}
+  .tc1{width:115px;font-weight:600;flex-shrink:0;line-height:1.5;}
+  .tc2{flex:1;line-height:1.6;}
+  .note{padding:10px 13px;border-radius:7px;font-size:13px;line-height:1.65;margin:8px 0;border-left:3px solid;}
+  .note b{font-weight:600;}
+  .seq{display:flex;flex-wrap:wrap;align-items:center;gap:5px;margin:10px 0;}
+  .si{padding:6px 10px;border-radius:7px;font-size:11.5px;font-weight:500;text-align:center;line-height:1.4;}
+  .sa{font-size:13px;color:var(--text3);}
+  .slbl{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:var(--text3);margin:12px 0 7px;}
+  .div{height:0.5px;background:var(--border);margin:12px 0;}
+  .two-col{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px;}
+  @media(max-width:540px){.two-col{grid-template-columns:1fr;}}
+  footer{text-align:center;font-size:12px;color:var(--text3);margin-top:28px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<!-- BANNER -->
+<div class="banner">
+  <h1>Astronomy — Complete MCQ Study Guide</h1>
+  <p>Tap any section or sub-topic to expand. Key exam facts are tagged <span class="mcq">MCQ hot</span></p>
+  <div class="pills">
+    <span class="pill" style="background:#EEEDFE;color:#3C3489;">● Stars</span>
+    <span class="pill" style="background:#E1F5EE;color:#085041;">● Galaxies</span>
+    <span class="pill" style="background:#FAEEDA;color:#633806;">● Solar System</span>
+    <span class="pill" style="background:#FAECE7;color:#712B13;">● Eclipses</span>
+  </div>
+</div>
+
+<!-- ═══════════════════ SECTION 1: STARS ═══════════════════ -->
+<div class="sec">
+<div class="sec-hdr" onclick="tog('s1')">
+  <div class="ico" style="background:#EEEDFE;color:#3C3489;">✦</div>
+  <div style="flex:1"><div class="stitle">I. Stars</div><div class="ssub">Classification · Birth · Life Cycle · Death Stages</div></div>
+  <div class="arr" id="a-s1">›</div>
+</div>
+<div class="sbody" id="s1">
+
+  <!-- 1A -->
+  <div class="sub-hdr" onclick="tog('s1a')" style="border-left:3px solid #7F77DD;">
+    <div class="sub-stitle">A. Classification based on temperature</div><span class="mcq">MCQ hot</span><div class="sub-arr" id="a-s1a">›</div>
+  </div>
+  <div class="sub-body" id="s1a">
+    <div class="slbl">Spectral class sequence — hottest to coolest</div>
+    <div class="seq">
+      <div class="si" style="background:#7F77DD;color:#fff;">O<br><span style="font-size:10px;font-weight:400;">&gt;30,000K<br>Blue</span></div><div class="sa">›</div>
+      <div class="si" style="background:#AFA9EC;color:#26215C;">B<br><span style="font-size:10px;font-weight:400;">10–30K<br>Blue-white</span></div><div class="sa">›</div>
+      <div class="si" style="background:#d0cfe8;color:#2C2C2A;">A<br><span style="font-size:10px;font-weight:400;">7.5–10K<br>White</span></div><div class="sa">›</div>
+      <div class="si" style="background:#d6e8c0;color:#3B6D11;">F<br><span style="font-size:10px;font-weight:400;">6–7.5K<br>Yel-white</span></div><div class="sa">›</div>
+      <div class="si" style="background:#FAC775;color:#633806;">G<br><span style="font-size:10px;font-weight:400;">5–6K<br>Yellow</span></div><div class="sa">›</div>
+      <div class="si" style="background:#F0997B;color:#712B13;">K<br><span style="font-size:10px;font-weight:400;">3.5–5K<br>Orange</span></div><div class="sa">›</div>
+      <div class="si" style="background:#D85A30;color:#fff;">M<br><span style="font-size:10px;font-weight:400;">2–3.5K<br>Red</span></div><div class="sa">›</div>
+      <div class="si" style="background:#993C1D;color:#fff;">L/T<br><span style="font-size:10px;font-weight:400;">700–2K<br>Red-brn</span></div>
+    </div>
+    <div class="note" style="background:#EEEDFE;border-color:#7F77DD;color:#26215C;"><b>Mnemonic:</b> Oh Be A Fine Girl/Guy, Kiss Me Lovingly Tonight</div>
+    <div class="div"></div>
+    <div class="cg3">
+      <div class="card"><div class="clbl" style="color:#3C3489;">Hottest (O-type)</div><div class="cval">Over 30,000 K · Blue · Very short-lived · Rare<br><span style="font-size:12px;color:var(--text2);">e.g. Meissa, Rigel</span></div></div>
+      <div class="card"><div class="clbl" style="color:#633806;">Sun-type (G)</div><div class="cval">5,000–6,000 K · Yellow · Long-lived<br><span style="font-size:12px;color:var(--text2);">e.g. Sun, Capella</span></div></div>
+      <div class="card"><div class="clbl" style="color:#993C1D;">Coolest (M-type)</div><div class="cval">2,000–3,500 K · Red · Most common type in universe<br><span style="font-size:12px;color:var(--text2);">e.g. Antares, Betelgeuse</span></div></div>
+    </div>
+    <div class="note" style="background:var(--bg2);border-color:var(--border2);color:var(--text);"><b>Key rule:</b> Color = temperature indicator. Blue = hottest; Red = coolest. A star's spectrum also reveals chemical composition via absorption lines.</div>
+  </div>
+
+  <!-- 1B -->
+  <div class="sub-hdr" onclick="tog('s1b')" style="border-left:3px solid #1D9E75;">
+    <div class="sub-stitle">B. Birth of a star — Nebula</div><span class="mcq">MCQ hot</span><div class="sub-arr" id="a-s1b">›</div>
+  </div>
+  <div class="sub-body" id="s1b">
+    <div class="cg2">
+      <div class="card"><div class="clbl" style="color:#085041;">What is a nebula?</div><div class="cval">A vast interstellar cloud of <b>gas (mainly hydrogen ~75%) and dust</b>. Acts as the raw material and birthplace of all stars.</div></div>
+      <div class="card"><div class="clbl" style="color:#085041;">How it forms a star</div><div class="cval">Regions of higher density collapse under <b>gravity</b>. Cloud contracts, heats up, spins faster, and forms a rotating disk.</div></div>
+      <div class="card"><div class="clbl" style="color:#085041;">Famous example</div><div class="cval"><b>Orion Nebula</b> — one of the most active star-forming regions, visible to the naked eye.</div></div>
+      <div class="card"><div class="clbl" style="color:#085041;">Types of nebulae</div><div class="cval"><b>Emission</b> — glows from ionised gas.<br><b>Reflection</b> — reflects nearby starlight.<br><b>Dark</b> — blocks background light.</div></div>
+    </div>
+    <div class="note" style="background:#E1F5EE;border-color:#1D9E75;color:#04342C;"><b>Trigger for collapse:</b> Shockwaves from a nearby supernova can push a nebula to collapse and initiate star formation.</div>
+  </div>
+
+  <!-- 1C -->
+  <div class="sub-hdr" onclick="tog('s1c')" style="border-left:3px solid #378ADD;">
+    <div class="sub-stitle">C. Protostar</div><div class="sub-arr" id="a-s1c">›</div>
+  </div>
+  <div class="sub-body" id="s1c">
+    <div class="cg2">
+      <div class="card"><div class="clbl" style="color:#185FA5;">Definition</div><div class="cval">The <b>earliest observable stage</b> of a star's life. Forms when a dense nebula region collapses under gravity.</div></div>
+      <div class="card"><div class="clbl" style="color:#185FA5;">Characteristics</div><div class="cval">Not yet fusing hydrogen. Temperature rising rapidly. Emits <b>infrared radiation</b>. Surrounded by infalling gas and dust.</div></div>
+      <div class="card"><div class="clbl" style="color:#185FA5;">Duration</div><div class="cval">Lasts ~<b>100,000 years</b> for Sun-like stars. More massive stars pass through faster.</div></div>
+      <div class="card"><div class="clbl" style="color:#185FA5;">T Tauri phase</div><div class="cval">Late protostar stage. Intense stellar winds blow away surrounding gas before nuclear fusion begins.</div></div>
+    </div>
+    <div class="note" style="background:#E6F1FB;border-color:#378ADD;color:#042C53;"><b>Key process:</b> Gravitational potential energy converts to heat. The protostar becomes visible only when surrounding dust clears.</div>
+  </div>
+
+  <!-- 1D -->
+  <div class="sub-hdr" onclick="tog('s1d')" style="border-left:3px solid #639922;">
+    <div class="sub-stitle">D. Main sequence star</div><span class="mcq">MCQ hot</span><div class="sub-arr" id="a-s1d">›</div>
+  </div>
+  <div class="sub-body" id="s1d">
+    <div class="cg2">
+      <div class="card"><div class="clbl" style="color:#3B6D11;">How it begins</div><div class="cval">Core reaches <b>10 million K</b>, triggering <b>nuclear fusion</b>: hydrogen fuses to helium, releasing enormous energy.</div></div>
+      <div class="card"><div class="clbl" style="color:#3B6D11;">Hydrostatic equilibrium</div><div class="cval">Outward radiation pressure <b>exactly balances</b> inward gravitational pull — keeps the star stable for billions of years.</div></div>
+      <div class="card"><div class="clbl" style="color:#3B6D11;">The Sun's lifespan</div><div class="cval">Sun has been on the main sequence for ~<b>4.6 billion years</b> with ~5 billion years remaining.</div></div>
+      <div class="card"><div class="clbl" style="color:#3B6D11;">Mass–lifespan rule</div><div class="cval"><b>Higher mass = shorter life.</b> 10× Sun mass → ~10 million year life. Low-mass red dwarfs can last trillions of years.</div></div>
+    </div>
+    <div class="note" style="background:#EAF3DE;border-color:#639922;color:#173404;"><b>H-R Diagram:</b> Most stars lie on the main sequence diagonal — a plot of luminosity vs temperature. The Sun is a middle-of-the-road G-type main sequence star.</div>
+  </div>
+
+  <!-- 1E -->
+  <div class="sub-hdr" onclick="tog('s1e')" style="border-left:3px solid #EF9F27;">
+    <div class="sub-stitle">E. Red giant</div><span class="mcq">MCQ hot</span><div class="sub-arr" id="a-s1e">›</div>
+  </div>
+  <div class="sub-body" id="s1e">
+    <div class="cg2">
+      <div class="card"><div class="clbl" style="color:#633806;">What triggers it?</div><div class="cval">Core's <b>hydrogen is exhausted</b>. Fusion stops. Core contracts and heats while outer layers <b>expand and cool</b>.</div></div>
+      <div class="card"><div class="clbl" style="color:#633806;">Appearance</div><div class="cval">Swells to <b>100× original diameter</b>, glowing red/orange. Our Sun will expand to engulf Mercury and Venus.</div></div>
+      <div class="card"><div class="clbl" style="color:#633806;">New fusion</div><div class="cval"><b>Helium fusion</b> (triple-alpha process) begins, producing <b>carbon and oxygen</b>. Massive stars continue fusing heavier elements.</div></div>
+      <div class="card"><div class="clbl" style="color:#633806;">Example</div><div class="cval"><b>Betelgeuse</b> (Orion) — so large it would extend to Jupiter's orbit if placed where the Sun is.</div></div>
+    </div>
+  </div>
+
+  <!-- 1F -->
+  <div class="sub-hdr" onclick="tog('s1f')" style="border-left:3px solid #E24B4A;">
+    <div class="sub-stitle">F. Death stages</div><span class="mcq">MCQ hot</span><div class="sub-arr" id="a-s1f">›</div>
+  </div>
+  <div class="sub-body" id="s1f">
+    <div class="two-col">
+      <div style="border:0.5px solid #B5D4F4;border-radius:var(--radius);padding:13px;">
+        <div style="font-size:12px;font-weight:600;color:#0C447C;margin-bottom:9px;">Small / Sun-like stars (≤ 8× Sun's mass)</div>
+        <div class="hl" style="background:#E6F1FB;border-radius:6px;"><div class="dot" style="background:#378ADD;"></div><div class="ht"><b>Planetary Nebula:</b> Outer layers gently shed into space, creating a glowing shell. (Not related to planets — historical misnaming.)</div></div>
+        <div class="hl" style="background:#E6F1FB;border-radius:6px;"><div class="dot" style="background:#378ADD;"></div><div class="ht"><b>White Dwarf:</b> Dense carbon core remains. Size ≈ Earth, mass ≈ Sun. No fusion — shines by residual heat. 1 teaspoon ≈ 1 tonne.</div></div>
+        <div class="hl" style="background:#E6F1FB;border-radius:6px;"><div class="dot" style="background:#185FA5;"></div><div class="ht"><b>Black Dwarf:</b> White dwarf cools over trillions of years → dark, cold object. None yet exist — universe too young.</div></div>
+      </div>
+      <div style="border:0.5px solid #F7C1C1;border-radius:var(--radius);padding:13px;">
+        <div style="font-size:12px;font-weight:600;color:#791F1F;margin-bottom:9px;">Massive stars (&gt; 8× Sun's mass)</div>
+        <div class="hl" style="background:#FCEBEB;border-radius:6px;"><div class="dot" style="background:#E24B4A;"></div><div class="ht"><b>Supernova (Type II):</b> Catastrophic collapse + explosion. Can briefly outshine an entire galaxy. Forges heavy elements (gold, lead, uranium).</div></div>
+        <div class="hl" style="background:#FCEBEB;border-radius:6px;"><div class="dot" style="background:#E24B4A;"></div><div class="ht"><b>Neutron Star:</b> ~16 km diameter. Protons + electrons fuse into neutrons. 1 teaspoon ≈ 100 million tonnes.</div></div>
+        <div class="hl" style="background:#FCEBEB;border-radius:6px;"><div class="dot" style="background:#E24B4A;"></div><div class="ht"><b>Pulsar:</b> Rotating neutron star emitting radio wave beams — like a cosmic lighthouse. First detected 1967 by Jocelyn Bell Burnell.</div></div>
+        <div class="hl" style="background:#FCEBEB;border-radius:6px;"><div class="dot" style="background:#A32D2D;"></div><div class="ht"><b>Black Hole:</b> Gravity so extreme even light cannot escape. Boundary = event horizon. Centre = singularity.</div></div>
+      </div>
+    </div>
+    <div class="note" style="background:#FAEEDA;border-color:#EF9F27;color:#412402;"><b>Mass determines fate:</b> Low mass → White Dwarf · Medium-high mass → Neutron Star · Extreme mass → Black Hole</div>
+  </div>
+
+</div></div>
+
+<!-- ═══════════════════ SECTION 2: GALAXIES ═══════════════════ -->
+<div class="sec">
+<div class="sec-hdr" onclick="tog('s2')">
+  <div class="ico" style="background:#E1F5EE;color:#085041;">◎</div>
+  <div style="flex:1"><div class="stitle">II. Galaxies</div><div class="ssub">Classification · Elliptical · Spiral · Irregular · Milky Way</div></div>
+  <div class="arr" id="a-s2">›</div>
+</div>
+<div class="sbody" id="s2">
+
+  <!-- 2A -->
+  <div class="sub-hdr" onclick="tog('s2a')" style="border-left:3px solid #1D9E75;">
+    <div class="sub-stitle">A. Classification of galaxies (Hubble Tuning Fork)</div><span class="mcq">MCQ hot</span><div class="sub-arr" id="a-s2a">›</div>
+  </div>
+  <div class="sub-body" id="s2a">
+    <div class="cg3">
+      <div class="card" style="border-top:3px solid #7F77DD;">
+        <div class="clbl" style="color:#3C3489;">Elliptical (E0–E7)</div>
+        <div class="cval">
+          <div class="hl" style="background:#EEEDFE;border-radius:5px;margin-bottom:5px;"><div class="dot" style="background:#7F77DD;"></div><div class="ht">Shape: E0 (sphere) to E7 (flattened ellipse)</div></div>
+          <div class="hl" style="background:#EEEDFE;border-radius:5px;margin-bottom:5px;"><div class="dot" style="background:#7F77DD;"></div><div class="ht">Mostly <b>old, red/yellow stars</b> · Very little gas or dust · Almost no new star formation</div></div>
+          <div class="hl" style="background:#EEEDFE;border-radius:5px;"><div class="dot" style="background:#7F77DD;"></div><div class="ht">Example: <b>M87</b> — giant elliptical, hosts the famous 2019 black hole image</div></div>
+        </div>
+      </div>
+      <div class="card" style="border-top:3px solid #1D9E75;">
+        <div class="clbl" style="color:#0F6E56;">Spiral (Sa–Sc / SBa–SBc)</div>
+        <div class="cval">
+          <div class="hl" style="background:#E1F5EE;border-radius:5px;margin-bottom:5px;"><div class="dot" style="background:#1D9E75;"></div><div class="ht">Flat disk with <b>central bulge + spiral arms</b> and a surrounding halo of old stars</div></div>
+          <div class="hl" style="background:#E1F5EE;border-radius:5px;margin-bottom:5px;"><div class="dot" style="background:#1D9E75;"></div><div class="ht"><b>Barred spirals (SB)</b> have a bar of stars through the nucleus. Milky Way is barred.</div></div>
+          <div class="hl" style="background:#E1F5EE;border-radius:5px;"><div class="dot" style="background:#1D9E75;"></div><div class="ht">Examples: <b>Milky Way, Andromeda (M31)</b>, Whirlpool (M51)</div></div>
+        </div>
+      </div>
+      <div class="card" style="border-top:3px solid #EF9F27;">
+        <div class="clbl" style="color:#633806;">Irregular (Irr)</div>
+        <div class="cval">
+          <div class="hl" style="background:#FAEEDA;border-radius:5px;margin-bottom:5px;"><div class="dot" style="background:#EF9F27;"></div><div class="ht"><b>No defined shape</b> · Chaotic structure</div></div>
+          <div class="hl" style="background:#FAEEDA;border-radius:5px;margin-bottom:5px;"><div class="dot" style="background:#EF9F27;"></div><div class="ht">Rich in <b>gas, dust, and young blue stars</b> · Active star formation</div></div>
+          <div class="hl" style="background:#FAEEDA;border-radius:5px;"><div class="dot" style="background:#EF9F27;"></div><div class="ht">Examples: <b>Large &amp; Small Magellanic Clouds</b> (satellite galaxies of Milky Way)</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="note" style="background:var(--bg2);border-color:var(--border2);color:var(--text);"><b>Hubble's tuning fork:</b> Ellipticals on the handle (E0→E7), splits into normal spirals (Sa→Sc) and barred spirals (SBa→SBc). Irregulars sit off the diagram entirely.</div>
+  </div>
+
+  <!-- 2B -->
+  <div class="sub-hdr" onclick="tog('s2b')" style="border-left:3px solid #7F77DD;">
+    <div class="sub-stitle">B. The Milky Way</div><span class="mcq">MCQ hot</span><div class="sub-arr" id="a-s2b">›</div>
+  </div>
+  <div class="sub-body" id="s2b">
+    <div class="cg4">
+      <div class="card"><div class="clbl" style="color:#3C3489;">Type</div><div class="cval">Barred spiral (SBbc)</div></div>
+      <div class="card"><div class="clbl" style="color:#3C3489;">Diameter</div><div class="cval">~100,000–120,000 light-years</div></div>
+      <div class="card"><div class="clbl" style="color:#3C3489;">Total stars</div><div class="cval">~200–400 billion</div></div>
+      <div class="card"><div class="clbl" style="color:#3C3489;">Sun's arm</div><div class="cval">Orion (minor) spiral arm</div></div>
+      <div class="card"><div class="clbl" style="color:#3C3489;">Sun to centre</div><div class="cval">~26,000 light-years</div></div>
+      <div class="card"><div class="clbl" style="color:#3C3489;">Centre direction</div><div class="cval">Constellation Sagittarius</div></div>
+      <div class="card"><div class="clbl" style="color:#3C3489;">Central black hole</div><div class="cval">Sagittarius A* (~4 million solar masses)</div></div>
+      <div class="card"><div class="clbl" style="color:#3C3489;">Nearest large galaxy</div><div class="cval">Andromeda (M31) ~2.5 million ly away</div></div>
+    </div>
+    <div class="note" style="background:#EEEDFE;border-color:#7F77DD;color:#26215C;"><b>Collision course:</b> Andromeda and the Milky Way are approaching at ~110 km/s and will merge in ~4.5 billion years to form a giant elliptical galaxy.</div>
+  </div>
+
+</div></div>
+
+<!-- ═══════════════════ SECTION 3: SOLAR SYSTEM ═══════════════════ -->
+<div class="sec">
+<div class="sec-hdr" onclick="tog('s3')">
+  <div class="ico" style="background:#FAEEDA;color:#633806;">☀</div>
+  <div style="flex:1"><div class="stitle">III. The Solar System</div><div class="ssub">Sun · Planets · Asteroids · Comets · Meteors</div></div>
+  <div class="arr" id="a-s3">›</div>
+</div>
+<div class="sbody" id="s3">
+
+  <!-- 3A Sun -->
+  <div class="sub-hdr" onclick="tog('s3a')" style="border-left:3px solid #EF9F27;">
+    <div class="sub-stitle">A. The Sun</div><span class="mcq">MCQ hot</span><div class="sub-arr" id="a-s3a">›</div>
+  </div>
+  <div class="sub-body" id="s3a">
+    <div class="cg4">
+      <div class="card"><div class="clbl" style="color:#633806;">Type</div><div class="cval">Yellow dwarf (G-type main sequence)</div></div>
+      <div class="card"><div class="clbl" style="color:#633806;">Age</div><div class="cval">~4.6 billion years</div></div>
+      <div class="card"><div class="clbl" style="color:#633806;">Mass share</div><div class="cval">99.86% of solar system</div></div>
+      <div class="card"><div class="clbl" style="color:#633806;">Core temp</div><div class="cval">~15 million K</div></div>
+      <div class="card"><div class="clbl" style="color:#633806;">Surface temp</div><div class="cval">~5,500°C (photosphere)</div></div>
+      <div class="card"><div class="clbl" style="color:#633806;">Diameter</div><div class="cval">~1.39 million km (109× Earth)</div></div>
+      <div class="card"><div class="clbl" style="color:#633806;">Energy source</div><div class="cval">Nuclear fusion H → He</div></div>
+      <div class="card"><div class="clbl" style="color:#633806;">Light to Earth</div><div class="cval">~8 min 20 seconds</div></div>
+    </div>
+    <div class="slbl">Layers of the Sun (inside → out)</div>
+    <div class="seq">
+      <div class="si" style="background:#D85A30;color:#fff;">Core</div><div class="sa">→</div>
+      <div class="si" style="background:#F0997B;color:#712B13;">Radiative zone</div><div class="sa">→</div>
+      <div class="si" style="background:#FAC775;color:#633806;">Convective zone</div><div class="sa">→</div>
+      <div class="si" style="background:#FAEEDA;color:#633806;">Photosphere</div><div class="sa">→</div>
+      <div class="si" style="background:#d4edd6;color:#3B6D11;">Chromosphere</div><div class="sa">→</div>
+      <div class="si" style="background:#E1F5EE;color:#085041;">Corona</div>
+    </div>
+    <div class="note" style="background:#FAEEDA;border-color:#EF9F27;color:#412402;"><b>Solar features:</b> Sunspots (cooler, darker regions) · Solar flares (energy bursts) · Prominences (plasma loops) · Coronal Mass Ejections (CMEs) — can disrupt Earth's satellites and power grids.</div>
+  </div>
+
+  <!-- 3B Terrestrial -->
+  <div class="sub-hdr" onclick="tog('s3b')" style="border-left:3px solid #D85A30;">
+    <div class="sub-stitle">B. Terrestrial planets</div><span class="mcq">MCQ hot</span><div class="sub-arr" id="a-s3b">›</div>
+  </div>
+  <div class="sub-body" id="s3b">
+    <div class="note" style="background:#FAECE7;border-color:#D85A30;color:#4A1B0C;margin-bottom:10px;"><b>Common traits:</b> Inner 4 planets · Rocky &amp; dense · Small · Slow rotation · Few or no moons · No ring systems · Close to Sun</div>
+    <div class="cg2">
+      <div class="card"><div class="clbl" style="color:#712B13;">Mercury</div><div class="cval">Smallest planet · No atmosphere · Extreme temp swings (−180°C to 430°C) · Closest to Sun · No moons · 88-day orbit</div></div>
+      <div class="card"><div class="clbl" style="color:#712B13;">Venus <span class="mcq">MCQ hot</span></div><div class="cval"><b>Hottest planet (462°C avg)</b> · Thick CO₂ → runaway greenhouse effect · Rotates backwards (retrograde) · Brightest object in night sky after Moon · No moons</div></div>
+      <div class="card"><div class="clbl" style="color:#712B13;">Earth</div><div class="cval">Only known planet with life · Nitrogen-oxygen atmosphere · 1 moon · Liquid water · Protective magnetosphere</div></div>
+      <div class="card"><div class="clbl" style="color:#712B13;">Mars</div><div class="cval">"Red Planet" (iron oxide) · Thin CO₂ atmosphere · <b>Olympus Mons</b> = tallest volcano in solar system · 2 moons: Phobos &amp; Deimos</div></div>
+    </div>
+  </div>
+
+  <!-- 3C Jovian -->
+  <div class="sub-hdr" onclick="tog('s3c')" style="border-left:3px solid #378ADD;">
+    <div class="sub-stitle">C. Jovian (Giant) planets</div><span class="mcq">MCQ hot</span><div class="sub-arr" id="a-s3c">›</div>
+  </div>
+  <div class="sub-body" id="s3c">
+    <div class="note" style="background:#E6F1FB;border-color:#378ADD;color:#042C53;margin-bottom:10px;"><b>Common traits:</b> Outer 4 planets · Gaseous/icy · Massive · Low density · Fast rotation · Many moons · Ring systems · Far from Sun</div>
+    <div class="cg2">
+      <div class="card"><div class="clbl" style="color:#185FA5;">Jupiter <span class="mcq">MCQ hot</span></div><div class="cval"><b>Largest &amp; most massive planet</b> · Great Red Spot = storm &gt;350 years · 95 known moons · <b>Ganymede</b> = largest moon in solar system · Strong magnetic field</div></div>
+      <div class="card"><div class="clbl" style="color:#185FA5;">Saturn <span class="mcq">MCQ hot</span></div><div class="cval"><b>Most prominent rings</b> (ice &amp; rock) · <b>Least dense planet</b> — would float on water · 146 moons · <b>Titan</b> has thick atmosphere with lakes of liquid methane</div></div>
+      <div class="card"><div class="clbl" style="color:#185FA5;">Uranus</div><div class="cval">Ice giant · <b>Rotates on its side</b> (98° axial tilt) · Blue-green colour (methane) · 27 moons · Faint ring system</div></div>
+      <div class="card"><div class="clbl" style="color:#185FA5;">Neptune</div><div class="cval">Farthest planet · <b>Strongest winds</b> (&gt;2,100 km/h) · Deep blue · <b>Great Dark Spot</b> · 16 moons · Triton orbits backwards</div></div>
+    </div>
+  </div>
+
+  <!-- 3D Asteroids -->
+  <div class="sub-hdr" onclick="tog('s3d')" style="border-left:3px solid #639922;">
+    <div class="sub-stitle">D. Asteroids</div><div class="sub-arr" id="a-s3d">›</div>
+  </div>
+  <div class="sub-body" id="s3d">
+    <div class="cg2">
+      <div class="card"><div class="clbl" style="color:#3B6D11;">Definition</div><div class="cval">Rocky/metallic irregularly shaped bodies, also called <b>minor planets</b>. Too small to be classed as planets.</div></div>
+      <div class="card"><div class="clbl" style="color:#3B6D11;">Main asteroid belt</div><div class="cval">Located <b>between Mars and Jupiter</b>. Jupiter's gravity prevents them from forming a planet.</div></div>
+      <div class="card"><div class="clbl" style="color:#3B6D11;">Largest</div><div class="cval"><b>Ceres</b> (~945 km) — classified as a dwarf planet. Others: Vesta, Pallas, Hygiea.</div></div>
+      <div class="card"><div class="clbl" style="color:#3B6D11;">Types</div><div class="cval"><b>C-type</b> (carbonaceous, most common) · <b>S-type</b> (siliceous/rocky) · <b>M-type</b> (metallic — iron &amp; nickel)</div></div>
+    </div>
+  </div>
+
+  <!-- 3E Comets -->
+  <div class="sub-hdr" onclick="tog('s3e')" style="border-left:3px solid #5DCAA5;">
+    <div class="sub-stitle">E. Comets</div><span class="mcq">MCQ hot</span><div class="sub-arr" id="a-s3e">›</div>
+  </div>
+  <div class="sub-body" id="s3e">
+    <div class="cg2">
+      <div class="card"><div class="clbl" style="color:#0F6E56;">Structure</div><div class="cval"><b>Nucleus:</b> Dirty snowball of water ice, frozen gases, dust &amp; rock.<br><b>Coma:</b> Hazy cloud around nucleus when heated by Sun.<br><b>Two tails:</b> Ion tail (plasma) + dust tail.</div></div>
+      <div class="card"><div class="clbl" style="color:#0F6E56;">Tail rule <span class="mcq">MCQ hot</span></div><div class="cval">Tails <b>always point away from the Sun</b> — pushed by solar wind and radiation. NOT behind the comet in its direction of travel.</div></div>
+      <div class="card"><div class="clbl" style="color:#0F6E56;">Origin regions</div><div class="cval"><b>Kuiper Belt</b> (30–50 AU) → short-period comets (&lt;200 yr orbit)<br><b>Oort Cloud</b> (~50,000 AU) → long-period comets (&gt;200 yr orbit)</div></div>
+      <div class="card"><div class="clbl" style="color:#0F6E56;">Famous comets</div><div class="cval"><b>Halley's Comet</b> — 75–76 yr period, last 1986, next ~2061.<br><b>Hale-Bopp</b> — naked-eye visible 18 months (1996–97).</div></div>
+    </div>
+  </div>
+
+  <!-- 3F Meteors -->
+  <div class="sub-hdr" onclick="tog('s3f')" style="border-left:3px solid #BA7517;">
+    <div class="sub-stitle">F. Meteoroids, meteors &amp; meteorites</div><span class="mcq">MCQ hot</span><div class="sub-arr" id="a-s3f">›</div>
+  </div>
+  <div class="sub-body" id="s3f">
+    <div class="tr" style="background:#FAEEDA;"><div class="tc1" style="color:#412402;">Meteoroid</div><div class="tc2" style="color:#412402;">Small solid particle orbiting the Sun in space. Can be fragments of asteroids or comets.</div></div>
+    <div class="tr" style="background:#FAC775;"><div class="tc1" style="color:#412402;">Meteor <span class="mcq" style="background:#fff;color:#633806;">MCQ hot</span></div><div class="tc2" style="color:#412402;">"Shooting star" — streak of light produced when a meteoroid enters Earth's atmosphere and burns due to <b>friction</b> at ~20 km altitude.</div></div>
+    <div class="tr" style="background:#EF9F27;"><div class="tc1" style="color:#fff;">Meteorite</div><div class="tc2" style="color:#fff;">Meteoroid that <b>survives the atmosphere</b> and lands on Earth's surface. Types: stony, iron, stony-iron.</div></div>
+    <div class="tr" style="background:#FAEEDA;"><div class="tc1" style="color:#412402;">Meteor shower</div><div class="tc2" style="color:#412402;">Earth passes through a comet's debris trail. e.g. <b>Perseids</b> (August) from Comet Swift-Tuttle; <b>Leonids</b> (November).</div></div>
+  </div>
+
+</div></div>
+
+<!-- ═══════════════════ SECTION 4: ECLIPSES ═══════════════════ -->
+<div class="sec">
+<div class="sec-hdr" onclick="tog('s4')">
+  <div class="ico" style="background:#FAECE7;color:#712B13;">◑</div>
+  <div style="flex:1"><div class="stitle">IV. Eclipses</div><div class="ssub">Solar · Lunar · Conditions · Why not monthly</div></div>
+  <div class="arr" id="a-s4">›</div>
+</div>
+<div class="sbody" id="s4">
+
+  <div class="two-col" style="margin-top:8px;">
+    <div style="border:0.5px solid #FAC775;border-radius:var(--radius);padding:13px;">
+      <div style="font-size:12px;font-weight:600;color:#633806;margin-bottom:9px;">Solar eclipse <span class="mcq">MCQ hot</span></div>
+      <div class="hl" style="background:#FAEEDA;border-radius:6px;"><div class="dot" style="background:#EF9F27;"></div><div class="ht"><b>Alignment:</b> Sun → Moon → Earth</div></div>
+      <div class="hl" style="background:#FAEEDA;border-radius:6px;"><div class="dot" style="background:#EF9F27;"></div><div class="ht"><b>Moon phase:</b> New Moon only</div></div>
+      <div class="hl" style="background:#FAEEDA;border-radius:6px;"><div class="dot" style="background:#EF9F27;"></div><div class="ht"><b>Total:</b> Moon fully covers Sun — narrow path on Earth (umbra shadow)</div></div>
+      <div class="hl" style="background:#FAEEDA;border-radius:6px;"><div class="dot" style="background:#EF9F27;"></div><div class="ht"><b>Partial:</b> Moon covers only part of Sun (penumbra zone)</div></div>
+      <div class="hl" style="background:#FAEEDA;border-radius:6px;"><div class="dot" style="background:#EF9F27;"></div><div class="ht"><b>Annular:</b> Moon farther away → appears smaller → "ring of fire" effect</div></div>
+      <div class="hl" style="background:#FAEEDA;border-radius:6px;"><div class="dot" style="background:#EF9F27;"></div><div class="ht">During totality: corona, prominences, chromosphere become visible</div></div>
+    </div>
+    <div style="border:0.5px solid #AFA9EC;border-radius:var(--radius);padding:13px;">
+      <div style="font-size:12px;font-weight:600;color:#3C3489;margin-bottom:9px;">Lunar eclipse <span class="mcq">MCQ hot</span></div>
+      <div class="hl" style="background:#EEEDFE;border-radius:6px;"><div class="dot" style="background:#7F77DD;"></div><div class="ht"><b>Alignment:</b> Sun → Earth → Moon</div></div>
+      <div class="hl" style="background:#EEEDFE;border-radius:6px;"><div class="dot" style="background:#7F77DD;"></div><div class="ht"><b>Moon phase:</b> Full Moon only</div></div>
+      <div class="hl" style="background:#EEEDFE;border-radius:6px;"><div class="dot" style="background:#7F77DD;"></div><div class="ht"><b>Total:</b> Moon fully in Earth's umbra → turns red ("Blood Moon")</div></div>
+      <div class="hl" style="background:#EEEDFE;border-radius:6px;"><div class="dot" style="background:#7F77DD;"></div><div class="ht"><b>Partial:</b> Only part of Moon enters umbra</div></div>
+      <div class="hl" style="background:#EEEDFE;border-radius:6px;"><div class="dot" style="background:#7F77DD;"></div><div class="ht"><b>Penumbral:</b> Moon in outer shadow only — subtle darkening</div></div>
+      <div class="hl" style="background:#EEEDFE;border-radius:6px;"><div class="dot" style="background:#7F77DD;"></div><div class="ht">Visible from <b>entire night side of Earth</b> — unlike solar eclipse</div></div>
+    </div>
+  </div>
+
+  <div class="cg2" style="margin-top:10px;">
+    <div class="card"><div class="clbl" style="color:#633806;">Why not every month? <span class="mcq">MCQ hot</span></div><div class="cval">Moon's orbit is tilted <b>~5.1°</b> relative to Earth's orbital plane (ecliptic). At New/Full Moon, Moon usually passes slightly above or below the shadow alignment.</div></div>
+    <div class="card"><div class="clbl" style="color:#633806;">Blood Moon</div><div class="cval">During total lunar eclipse, Earth's atmosphere scatters blue light and bends <b>red/orange light</b> into Earth's shadow — illuminating the Moon in reddish hues (Rayleigh scattering).</div></div>
+    <div class="card"><div class="clbl" style="color:#3C3489;">Umbra vs Penumbra</div><div class="cval"><b>Umbra</b> = total shadow. <b>Penumbra</b> = partial shadow. <b>Antumbra</b> = beyond umbra tip → annular eclipse zone.</div></div>
+    <div class="card"><div class="clbl" style="color:#3C3489;">Saros cycle</div><div class="cval">Eclipses repeat on an <b>18-year, 11-day cycle</b>. Used since ancient times to predict eclipses.</div></div>
+  </div>
+
+</div></div>
+
+<footer>Astronomy MCQ Study Guide · Created with Claude · github.io</footer>
+
+</div><!-- end wrap -->
+<script>
+function tog(id){
+  var b=document.getElementById(id);
+  var a=document.getElementById('a-'+id);
+  if(!b)return;
+  var op=b.classList.contains('op');
+  b.classList.toggle('op',!op);
+  if(a)a.classList.toggle('op',!op);
+}
+</script>
+</body>
+</html>
